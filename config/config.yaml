@@ -1,0 +1,49 @@
+#config_version=4
+
+coils:
+  c_flipper_left_main:
+    number:
+  c_flipper_left_hold:
+    number:
+    allow_enable: true
+  c_flipper_right_main:
+    number:
+  c_flipper_right_hold:
+    number:
+    allow_enable: true
+
+displays:
+  window:
+    width: 800
+    height: 600
+
+flippers:
+  left_flipper:
+    main_coil: c_flipper_left_main
+    hold_coil: c_flipper_left_hold
+    activation_switch: s_left_flipper
+    enable_events: machine_reset_phase_3
+  right_flipper:
+    main_coil: c_flipper_right_main
+    hold_coil: c_flipper_right_hold
+    activation_switch: s_right_flipper
+    enable_events: machine_reset_phase_3
+
+slide_player:
+   init_done: welcome_slide
+
+slides:
+   welcome_slide:
+      widgets:
+        - type: text
+          text: 'Twin Peaks: Season 2'
+          font_size: 50
+          color: green
+
+switches:
+  s_left_flipper:
+    number:
+    tags: left_flipper
+  s_right_flipper:
+    number:
+    tags: right_flipper
