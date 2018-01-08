@@ -1,5 +1,23 @@
 #config_version=4
 
+switches:
+  s_left_flipper:
+    number:
+    tags: left_flipper
+  s_right_flipper:
+    number:
+    tags: right_flipper
+  s_plunger_lane:
+    number:
+  s_trough1:
+    number:
+  s_trough2:
+    number:
+  s_trough3:
+    number:
+  s_trough4:
+    number:
+
 coils:
   c_left_flipper_main:
     number:
@@ -11,11 +29,23 @@ coils:
   c_right_flipper_hold:
     number:
     allow_enable: true
+  c_plunger:
+    number:
+  c_trough_eject:
+    number:
 
-displays:
-  window:
-    width: 800
-    height: 600
+ball_devices:
+  bd_trough:
+    ball_switches: s_trough1, s_trough2, s_trough3, s_trough4
+    eject_coil: c_trough_eject
+    eject_targets: bd_plunger
+    tags: trough, home, drain
+  bd_plunger:
+    ball_switches: s_plunger_lane
+    eject_coil: c_plunger
+    eject_timeouts: 3s
+    mechanical_eject: true
+    tags: ball_add_live
 
 flippers:
   left_flipper:
@@ -29,21 +59,50 @@ flippers:
     activation_switch: s_right_flipper
     enable_events: machine_reset_phase_3
 
-slide_player:
-   init_done: welcome_slide
+displays:
+  window:
+    width: 800
+    height: 600
 
 slides:
-   welcome_slide:
-      widgets:
-        - type: text
-          text: 'Twin Peaks: Season 2'
-          font_size: 50
-          color: green
+  welcome_slide:
+    widgets:
+      - type: text
+        text: "Twin Peaks: Season 2"
+        font_size: 50
+        color: green
+      - type: rectangle
+        width: 520
+        height: 60
+  attract_started:
+    widgets:
+      - text: ATTRACT MODE
+        type: text
 
-switches:
-  s_left_flipper:
-    number:
-    tags: left_flipper
-  s_right_flipper:
-    number:
-    tags: right_flipper
+slide_player:
+  init_done: welcome_slide
+  mode_attract_started: attract_started
+
+keyboard:
+  z:
+    switch: s_left_flipper
+  "/":
+    switch: s_right_flipper
+  1:
+    switch: s_trough1
+    toggle: true
+  2:
+    switch: s_trough2
+    toggle: true
+  3:
+    switch: s_trough3
+    toggle: true
+  4:
+    switch: s_trough4
+    toggle: true
+
+virtual_platform_start_active_switches:
+  s_trough1
+  s_trough2
+  s_trough3
+  s_trough4
