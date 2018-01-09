@@ -60,12 +60,10 @@ flippers:
     main_coil: c_left_flipper_main
     hold_coil: c_left_flipper_hold
     activation_switch: s_left_flipper
-    enable_events: machine_reset_phase_3
   right_flipper:
     main_coil: c_right_flipper_main
     hold_coil: c_right_flipper_hold
     activation_switch: s_right_flipper
-    enable_events: machine_reset_phase_3
 
 displays:
   window:
@@ -90,16 +88,23 @@ slides:
 slide_player:
   init_done: welcome_slide
   mode_attract_started: attract_started
+  ball_started:
+    widgets:
+      type: text
+      text: PLAYER (number) BALL (ball)
 
 keyboard:
   z:
     switch: s_left_flipper
-  "/":
+  "?":
     switch: s_right_flipper
   s:
     switch: s_start
   q:
     switch: s_right_inlane
+  p:
+    switch: s_plunger_lane
+    toggle: true
   1:
     switch: s_trough1
     toggle: true
