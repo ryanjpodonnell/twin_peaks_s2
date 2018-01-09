@@ -35,7 +35,7 @@ coils:
   c_right_flipper_hold:
     number:
     allow_enable: true
-  c_plunger:
+  c_plunger_eject:
     number:
   c_trough_eject:
     number:
@@ -48,7 +48,7 @@ ball_devices:
     tags: trough, home, drain
   bd_plunger:
     ball_switches: s_plunger_lane
-    eject_coil: c_plunger
+    eject_coil: c_plunger_eject
     eject_timeouts: 3s
     mechanical_eject: true
     tags: ball_add_live
