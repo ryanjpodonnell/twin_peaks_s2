@@ -49,6 +49,8 @@ ball_devices:
   bd_plunger:
     ball_switches: s_plunger_lane
     eject_coil: c_plunger_eject
+    eject_targets: playfield
+    confirm_eject_type: target
     eject_timeouts: 3s
     mechanical_eject: true
     tags: ball_add_live
