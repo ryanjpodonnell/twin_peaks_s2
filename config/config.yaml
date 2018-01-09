@@ -7,6 +7,9 @@ switches:
   s_right_flipper:
     number:
     tags: right_flipper
+  s_start:
+    number:
+    tags: start
   s_plunger_lane:
     number:
   s_trough1:
@@ -17,6 +20,9 @@ switches:
     number:
   s_trough4:
     number:
+  s_right_inlane:
+    number:
+    tags: playfield_active
 
 coils:
   c_left_flipper_main:
@@ -88,6 +94,10 @@ keyboard:
     switch: s_left_flipper
   "/":
     switch: s_right_flipper
+  s:
+    switch: s_start
+  q:
+    switch: s_right_inlane
   1:
     switch: s_trough1
     toggle: true
