@@ -26,3 +26,9 @@ slide_player:
         anchor_x: right
         anchor_y: bottom
         font_size: 50
+
+scoring:
+  s_right_inlane_active:
+    score: 100
+  s_left_flipper_active:
+    score: 1000

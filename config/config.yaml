@@ -40,6 +40,20 @@ coils:
   c_trough_eject:
     number:
 
+matrix_lights:
+  l_light1:
+    number:
+    label:
+    tags: black
+  l_light2:
+    number:
+    label:
+    tags: white
+  l_light3:
+    number:
+    label:
+    tags: red
+
 ball_devices:
   bd_trough:
     ball_switches: s_trough1, s_trough2, s_trough3, s_trough4
@@ -80,14 +94,9 @@ slides:
       - type: rectangle
         width: 520
         height: 60
-  attract_started:
-    widgets:
-      - text: ATTRACT MODE
-        type: text
 
 slide_player:
   init_done: welcome_slide
-  mode_attract_started: attract_started
 
 modes:
   -  base
