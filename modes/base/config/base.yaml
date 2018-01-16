@@ -27,6 +27,18 @@ slide_player:
         anchor_y: bottom
         font_size: 50
 
+sound_player:
+  mode_base_started:
+    theme_1:
+      action: play
+      loops: -1
+  balldevice_playfield_ball_enter:
+    theme_1:
+      action: stop_looping
+    theme_2:
+      action: play
+      loops: -1
+
 scoring:
   s_right_inlane_active:
     score: 100

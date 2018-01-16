@@ -98,6 +98,20 @@ slides:
 slide_player:
   init_done: welcome_slide
 
+sound_system:
+  master_volume: 1
+  tracks:
+    music:
+      simultaneous_sounds: 1
+      volume: 0.75
+
+assets:
+  sounds:
+    default:
+      load: preload
+    music:
+      track: music
+
 modes:
   -  base
 
